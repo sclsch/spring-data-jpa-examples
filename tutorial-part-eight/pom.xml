@@ -16,11 +16,28 @@
     <url>http://www.petrikainulainen.net</url>
     <repositories>
         <repository>
-            <id>repository.jboss.org-public</id>
-            <name>JBoss repository</name>
-            <url>https://repository.jboss.org/nexus/content/groups/public</url>
+            <id>maven-public</id>
+            <name>maven-public</name>
+            <url>http://localhost:8081/repository/group-maven</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
         </repository>
     </repositories>
+    <distributionManagement>
+        <repository>
+            <id>maven-local</id>
+            <name>maven-local</name>
+            <url>http://localhost:8081/repository/maven-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-local-snapshot</id>
+            <name>maven-local-snapshot</name>
+            <url>http://localhost:8081/repository/maven-local-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
     <properties>
         <hibernate.version>4.0.1.Final</hibernate.version>
         <jackson.version>1.9.4</jackson.version>
